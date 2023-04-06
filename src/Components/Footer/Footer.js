@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
     return (
-        <Footer>
+        <>
             <div className="footer__wrapper">
                 <div className='f__lt'>
                     <h2>Free Of Gluten</h2>
@@ -37,7 +37,7 @@ function Footer() {
 
             </div>
             <div className="footer_copyright">&copy Freeofgluten-2023</div>
-        </Footer>
+        </>
     )
 }
 
