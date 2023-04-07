@@ -1,0 +1,48 @@
+.banner{
+    height: 70vmin;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #FEF4FB;
+
+    .home__h-info > h1{
+        font-size: 64px;
+        margin-bottom: 38px;
+        user-select: none;
+        color: #8bc54b;
+    }
+    .cart{
+        border-radius: 22px;
+        color: white;
+    }
+}
+
+
+.services__option{
+    position: relative;
+    background-color: white;
+    margin: 0 auto;
+    width: 650px;
+    border-radius: 8px;
+    padding: 1vmax;
+    color : #8bc54b;
+    display: flex;
+    justify-content: space-evenly;
+    color: blac;
+    bottom: 50px;
+    border: 1px solid #000000;
+
+
+    .ser{
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+
+        .desc{
+            font-size: 12px;
+        }
+    }
+
+    
+}

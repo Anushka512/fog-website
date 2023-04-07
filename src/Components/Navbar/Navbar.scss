@@ -3,6 +3,7 @@ nav{
     background-color: #000000;
     padding-top: 5px;
     position: sticky;
+    z-index: 10;
     top: 0;
     box-shadow: 0 0 16px rgba(0,0,0,0.5);
 
@@ -27,22 +28,6 @@ nav{
 
                 a{
                     text-decoration: none;
-                }
-            }
-
-            .cart{
-                background-color: #8BC54B;
-                padding: 10px;
-                font-size: 16px;
-                border-radius: 14px;
-                border: none;
-                transition: var(--transition);
-
-                &:hover{
-                    background-color: #79d01b;
-                    border: none;
-                    color: white;
-                    outline: none;
                 }
             }
 
