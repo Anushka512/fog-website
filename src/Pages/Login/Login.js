@@ -18,7 +18,7 @@ function Login() {
 
   return (
     
-    <div className={`container ${isSignUpMode ? 'sign-up-mode' : ''}`}>
+    <div className={`container__login ${isSignUpMode ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
         <div className="signin-signup">
           <form action="API/index.html" className="sign-in-form">
@@ -31,7 +31,7 @@ function Login() {
               <i className="fas fa-lock"></i>
               <input type="password" placeholder="Password" />
             </div>
-            <button type="submit" className="btn">
+            <button type="submit" className="btn cart">
               Sign In
             </button>
             <p className="social-text">Or Sign In with social platforms</p>
@@ -63,7 +63,7 @@ function Login() {
               <i className="fas fa-lock"></i>
               <input type="password" placeholder="Confirm Password" />
             </div>
-            <button type="submit" className="btn">
+            <button type="submit" className="btn cart">
               Sign Up
             </button>
 
@@ -89,7 +89,7 @@ function Login() {
               deserunt sequi soluta adipisci molestiae minima pariatur sapiente
               ipsum ab vitae!
             </p>
-            <button className="btn transparent" id="sign-up-btn" onClick={handleSignUpClick}>
+            <button className="btn cart transparent" id="sign-up-btn" onClick={handleSignUpClick}>
               Sign Up
             </button>
           </div>
@@ -105,7 +105,7 @@ function Login() {
               deserunt sequi soluta adipisci molestiae minima pariatur sapiente
               ipsum ab vitae!
             </p>
-            <button className="btn transparent" onClick={handleSignInClick}>
+            <button className="btn cart transparent" onClick={handleSignInClick}>
               Sign In
             </button>
           </div>
