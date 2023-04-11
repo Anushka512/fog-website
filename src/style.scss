@@ -14,7 +14,8 @@ body {
   --primary-green: green;
   --primary-white: #ffffff;
   --primary-black: #000000;
-  --primary-pink: pink;
+  --primary-pink: #ef8bd3;
+  --primary-grey: #9c9c9c;
 
   --container-width-lg: 80%;
   --container-width-md: 90%;
@@ -99,6 +100,11 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.p-text {
+  color: var(--primary-grey);
+  margin-bottom: 2vmin;
 }
 
 // Error page
