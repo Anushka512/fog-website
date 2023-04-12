@@ -1,0 +1,245 @@
+.banner {
+  height: 80vmin;
+  padding-top: 2vmin;
+  padding-bottom: 2vmin;
+  background-color: #fef4fb;
+
+  .hero__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .home__h-img {
+    width: 690px;
+  }
+
+  .home__h-info > h1 {
+    font-size: 40px;
+    margin-bottom: 38px;
+    user-select: none;
+
+    span {
+      font-weight: 400;
+    }
+  }
+  .cart {
+    border-radius: 22px;
+    color: white;
+  }
+}
+
+//----------------------------SERVICES-----------------
+.services__option {
+  position: relative;
+  background-color: white;
+  margin: 0 auto;
+  width: 650px;
+  border-radius: 8px;
+  padding: 1vmax;
+  color: #8bc54b;
+  display: flex;
+  justify-content: space-evenly;
+  color: blac;
+  bottom: 30px;
+  border: 1px solid #000000;
+
+  .ser {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+
+    .desc {
+      font-size: 12px;
+    }
+  }
+}
+
+// ----------------------PRODUCTS---------------
+.products {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  .products__container {
+    .products__cards {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .feature__product {
+      margin-top: 36px;
+    }
+  }
+
+  .products__container > h3 {
+    color: var(--primary-black);
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 38px;
+
+    span {
+      margin-left: 0.5vmax;
+      font-size: 12px;
+      background-color: var(--primary-pink);
+      border-radius: 15px;
+      padding: 0.5vmin 1vmin;
+      color: white;
+      font-weight: 300;
+    }
+  }
+}
+
+//----------------------------MENU__IMG----------------->
+
+.div__row-img {
+  padding: 5vmax 0 0 0;
+}
+
+.Menu {
+  padding-top: 5vmax;
+  background-color: #fef4fb;
+  padding-bottom: 5vmax;
+
+  .menu__container > h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .menu__container {
+    .menu__head-sec {
+      font-weight: 400;
+    }
+
+    .menu__head {
+      font-size: 50px;
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    .menu__items {
+      gap: 35px;
+      background-color: #ececec;
+      width: 50vmax;
+      margin: 0 auto 35px auto; //For Centering
+      border-radius: 25px;
+
+      //Removing Marign From Class p-text
+      .p-text {
+        margin: 0;
+      }
+
+      div {
+        padding: 0.6vmax 0;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+
+      //Active Item Will Have this property
+      .item-active {
+        background-color: #8bc54b;
+        color: white;
+        border-radius: 25px;
+        padding: 0.6vmax 10px;
+      }
+    }
+
+    .menu__cards-container {
+      flex-wrap: wrap;
+      gap: 45px;
+
+      .Card {
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+//----------------------------ABOUT-BANNER-START----------------->
+
+.About__Banner {
+  margin-top: 50px;
+  position: relative;
+  overflow: hidden;
+  .about__banner {
+    .left {
+      display: flex;
+      flex-direction: column;
+
+      align-items: flex-start;
+      justify-content: flex-start;
+      .p-text {
+        max-width: 40%;
+      }
+
+      .about__logo {
+        width: 110px;
+        margin-bottom: 40px;
+      }
+
+      .about__banner-info {
+        margin-left: 3vmax;
+        padding-bottom: 80px;
+
+        .ab-head-first {
+          font-weight: 400;
+          color: #8bc54b;
+          margin-bottom: 10px;
+        }
+
+        .ab-head-sec {
+          font-size: 45px;
+        }
+        .btn {
+          background-color: transparent;
+          border: 1px solid #8bc54b;
+          color: #8bc54b;
+          padding: 0.4vmax 1vmax;
+          border-radius: 25px;
+        }
+      }
+    }
+  }
+
+  .right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    img {
+      width: 700px;
+      height: 400px;
+      border-radius: 25px;
+    }
+  }
+}
+
+
+//----------------------------TestimonialS-START----------------->
+
+
+.Testimonials{
+  padding-top: 5vmax;
+  padding-bottom: 5vmax;
+  background-color: #fef4fb;
+  h2{
+    font-size: 50px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 50px;
+    span{
+      font-weight: 600;
+    }
+  }
+
+  .testimonials__container{
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+}
