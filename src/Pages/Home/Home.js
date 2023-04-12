@@ -1,12 +1,19 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Banner from "../../Assets/Images/Banner__IMG.png";
 import CardImg from "../../Assets/Images/3.jpg.png";
+import logoSec from "../../Assets/Images/logo__sec.png";
+import aboutBanner from "../../Assets/Images/about__banner.png";
 import rowIMG from "../../Assets/Images/div.row.png";
 import Card from "../../Components/Card/Card.js";
+import TestimonialCard from "../../Components/TestimonialCard/TestimonialCard.js";
+import userImg from "../../Assets/Images/Ellipse 6.png";
 
 import "./Home.scss";
+import { Link } from "react-router-dom";
 
 function Home() {
+  const [activeFilter, setActiveFilter] = useState("All");
+
   return (
     <Fragment>
       <div className="banner">
@@ -87,6 +94,100 @@ function Home() {
       <div className="div__row-img">
         <img src={rowIMG} alt="ROW__IMG" />
       </div>
+
+      <main>
+        <div className="Menu">
+          <div className="container menu__container">
+            <h2 className="menu__head-sec">Fresh from Free of Gluten</h2>
+            <h2 className="menu__head">OUR SPECIAL MENU</h2>
+
+            <div className="menu__items flex__center">
+              {["All", "Breads", "Cookies", "Snacks", "Desert", "Namkeen"].map(
+                (elem, id) => (
+                  <div
+                    onClick={() => setActiveFilter(elem)}
+                    className={`menu__item-filter-item flex__center p-text ${
+                      activeFilter === elem ? "item-active" : ""
+                    }`}
+                    key={elem - id}
+                  >
+                    {elem}
+                  </div>
+                )
+              )}
+            </div>
+
+            <div className="menu__cards-container flex__center">
+              <Card name="Makkhan" price="120" imgUrl={CardImg} />
+              <Card name="Makkhan" price="120" imgUrl={CardImg} />
+              <Card name="Makkhan" price="120" imgUrl={CardImg} />
+              <Card name="Makkhan" price="120" imgUrl={CardImg} />
+              <Card name="Makkhan" price="120" imgUrl={CardImg} />
+              <Card name="Makkhan" price="120" imgUrl={CardImg} />
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* {---------------------MENU SECTION END----------------------------} */}
+
+      {/* {---------------------BANNER SECTION START----------------------------} */}
+
+      <div className="About__Banner">
+        <div className="container about__banner flex__center">
+          <div className="left">
+            <div className="about__logo">
+              <img src={logoSec} alt="Company__logo" />
+            </div>
+
+            <div className="about__banner-info">
+              <h3 className="ab-head-first">Delicious restaurant</h3>
+              <h2 className="ab-head-sec">About Gluten Free</h2>
+              <p className="p-text">
+                The generated Lorem Ipsum is therefore always free from
+                repetition injected humour, or non-characteristic words etc. The
+                generated Lorem Ipsum is therefore always free from repetition
+                injected humour, or non-characteristic words etc.
+              </p>
+              <button className="btn">Our Story</button>
+            </div>
+          </div>
+        </div>
+        <div className="right">
+          <img src={aboutBanner} alt="banner" />
+        </div>
+      </div>
+
+      {/* {---------------------BANNER SECTION END----------------------------} */}
+
+      {/* {---------------------TESTIMONIALS SECTION START----------------------------} */}
+
+      <div className="Testimonials">
+        <h2>
+          What <span>people say</span> about us
+        </h2>
+        <div className="container testimonials__container flex__center">
+          <TestimonialCard
+            imgUrl={userImg}
+            name="Deepak"
+            desc="The generated Lorem Ipsum is therefore always free from a dummy text, generated text."
+          />
+
+          <TestimonialCard
+            imgUrl={userImg}
+            name="Deepak"
+            desc="The generated Lorem Ipsum is therefore always free from a dummy text, generated text."
+          />
+
+          <TestimonialCard
+            imgUrl={userImg}
+            name="Deepak"
+            desc="The generated Lorem Ipsum is therefore always free from a dummy text, generated text."
+          />
+        </div>
+      </div>
+
+      {/* {---------------------TESTIMONIALS SECTION END----------------------------} */}
     </Fragment>
   );
 }
