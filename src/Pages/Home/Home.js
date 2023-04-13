@@ -9,13 +9,14 @@ import TestimonialCard from "../../Components/TestimonialCard/TestimonialCard.js
 import userImg from "../../Assets/Images/Ellipse 6.png";
 
 import "./Home.scss";
-import { Link } from "react-router-dom";
 
 function Home() {
   const [activeFilter, setActiveFilter] = useState("All");
 
   return (
     <Fragment>
+      {/* {---------------------HERO SECTION START----------------------------} */}
+
       <div className="banner">
         <div className="container hero__container">
           <div className="home__h-img">
@@ -33,6 +34,8 @@ function Home() {
           </div>
         </div>
       </div>
+
+      {/* {---------------------HERO SECTION END----------------------------} */}
 
       {/* {---------------------SERVICE SECTION START----------------------------} */}
 
