@@ -10,6 +10,10 @@ body {
   background-color: #eee;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary-green: green;
   --primary-white: #ffffff;
