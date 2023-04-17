@@ -6,17 +6,25 @@ import Footer from "./Components/Footer/Footer";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Faq from "./Pages/FAQ/Faq";
+import Cart from "./Components/Cart/Cart.js";
+import { useState } from "react";
 
 function App() {
+  const [toggleCart, setToggleCart] = useState(false);
+  function handleToggleCart() {
+    console.log("Run", toggleCart);
+    setToggleCart(!toggleCart);
+  }
   return (
     <div className="App">
-      <Navbar />
+      <Navbar setToggleCart={handleToggleCart} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/auth" element={<Login />} />
         <Route path="/badreq" element={<Error />} />
         <Route path="/faq" element={<Faq />} />
       </Routes>
+      <Cart toggleCart={toggleCart} setToggleCart={handleToggleCart} />
       <Footer />
     </div>
   );

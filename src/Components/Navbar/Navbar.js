@@ -4,7 +4,7 @@ import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
 import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 import "./Navbar.scss";
 
-export default function Navbar() {
+export default function Navbar({setToggleCart}) {
   return (
     <div className="wrapper__nav">
       <div className="socials__nav">
@@ -31,7 +31,7 @@ export default function Navbar() {
             ))}
           </ul>
           <div className="right">
-            <AiOutlineShoppingCart />
+            <AiOutlineShoppingCart onClick={setToggleCart} />
             <AiOutlineHeart />
             <div className="auth">
               <button className="btn cart">Login/Signup</button>
