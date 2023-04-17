@@ -104,16 +104,23 @@ const Faq = () => {
           </ul>
         </div>
         <div className="right-section">
-          {filteredData.map((topic,id) => (
-            <div id={topic.topic} className={`faq__card ${toggleFaq ? "active__class" : ""}`}>
-              <div className="top__bar">
-                <h3>{topic.questions[0].question}</h3>
-                {/* <h2>{topic.topic}</h2> */}
-                <AiOutlineArrowUp onClick={() => setToggleFaq(!toggleFaq)} />
-              </div>
+          {filteredData.map((topic, id) => (
+            <div id={topic.topic} className={`faq__card}`}>
+              {/* <h3>{topic.questions[0].question}</h3> */}
+              <h2>{topic.topic}</h2>
               {topic.questions.map((question) => (
-                <div className="faq__desc">
-                  <p>{question.answer}</p>
+                <div
+                  className={`faq__card ${toggleFaq ? "active__class" : ""}`}
+                >
+                  <div className="top__bar">
+                    <h4>{question.question}</h4>
+                    <AiOutlineArrowUp
+                      onClick={() => setToggleFaq(!toggleFaq)}
+                    />
+                  </div>
+                  <div className="faq__desc">
+                    <p>{question.answer}</p>
+                  </div>
                 </div>
               ))}
             </div>

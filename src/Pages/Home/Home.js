@@ -14,7 +14,7 @@ function Home() {
   const [activeFilter, setActiveFilter] = useState("All");
 
   return (
-    <Fragment>
+    <div  className="Home">
       {/* {---------------------HERO SECTION START----------------------------} */}
 
       <div className="banner">
@@ -191,7 +191,7 @@ function Home() {
       </div>
 
       {/* {---------------------TESTIMONIALS SECTION END----------------------------} */}
-    </Fragment>
+    </div >
   );
 }
 
