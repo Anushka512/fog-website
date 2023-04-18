@@ -14,6 +14,7 @@ function Card({ imgUrl, name, price }) {
         <img src={imgUrl} alt="product" />
       </div>
       <div className="bottom__bar">
+        <h4 className="cate">CATEGORY</h4>
         <h3>{name}</h3>
         <div className="card__info">
           <div className="info__desc">
@@ -41,7 +42,7 @@ function Card({ imgUrl, name, price }) {
             </svg>
           </p>
 
-          <button className="btn">Add To Cart</button>
+          <button className="btn">ADD</button>
         </div>
       </div>
     </div>
