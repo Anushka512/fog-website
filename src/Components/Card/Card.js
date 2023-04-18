@@ -20,7 +20,7 @@ function Card({ imgUrl, name, price }) {
             <AiFillCheckCircle />
             <p className="p-text">Available in - 500 gm</p>
           </div>
-          <AiOutlineHeart style={{cursor:"pointer"}}/>
+          <AiOutlineHeart style={{ cursor: "pointer" }} />
         </div>
 
         <div className="card__desc">
