@@ -1,7 +1,7 @@
 import React from "react";
 import Span from "../../Assets/Images/span.veg.png";
 import "./Card.scss";
-import { AiOutlineHeart, AiFillCheckCircle } from "react-icons/ai";
+// import { AiOutlineHeart, AiFillCheckCircle } from "react-icons/ai";
 
 function Card({ imgUrl, name, price }) {
   return (
@@ -17,10 +17,10 @@ function Card({ imgUrl, name, price }) {
         <h3>{name}</h3>
         <div className="card__info">
           <div className="info__desc">
-            <AiFillCheckCircle />
+            {/* <AiFillCheckCircle /> */}
             <p className="p-text">Available in - 500 gm</p>
           </div>
-          <AiOutlineHeart style={{cursor:"pointer"}}/>
+          {/* <AiOutlineHeart style={{cursor:"pointer"}}/> */}
         </div>
 
         <div className="card__desc">
