@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useRef } from "react";
 import Banner from "../../Assets/Images/Banner__IMG.png";
 import CardImg from "../../Assets/Images/3.jpg.png";
 import logoSec from "../../Assets/Images/logo__sec.png";
@@ -7,14 +7,42 @@ import rowIMG from "../../Assets/Images/div.row.png";
 import Card from "../../Components/Card/Card.js";
 import TestimonialCard from "../../Components/TestimonialCard/TestimonialCard.js";
 import userImg from "../../Assets/Images/Ellipse 6.png";
+import CategoryComp from "../../Components/CategoryComp/CategoryComp.js";
+import PopularItem from "../../Components/PopularItem/PopularItem.js";
+import dummyIMg from "../../Assets/Images/3.jpg.png";
+import CatImg from "../../Assets/Images/cat-img.png";
+import { FiTruck } from "react-icons/fi";
+import { MdOutlineSupportAgent, MdPayments } from "react-icons/md";
+import { BiTimer } from "react-icons/bi";
+import { AiFillCaretRight, AiFillCaretLeft } from "react-icons/ai";
 
 import "./Home.scss";
 
 function Home() {
+  const HorizontalScroll1 = useRef();
+  const HorizontalScroll2 = useRef();
   const [activeFilter, setActiveFilter] = useState("All");
 
+  const handleTransformLeft1 = (e) => {
+    console.log(e);
+    HorizontalScroll1.current.scrollLeft += 120;
+  };
+
+  const handleTransformRight1 = () => {
+    HorizontalScroll1.current.scrollLeft -= 120;
+  };
+
+  const handleTransformLeft2 = (e) => {
+    console.log(e);
+    HorizontalScroll2.current.scrollLeft += 120;
+  };
+
+  const handleTransformRight2 = () => {
+    HorizontalScroll2.current.scrollLeft -= 120;
+  };
+
   return (
-    <Fragment>
+    <div className="Home">
       {/* {---------------------HERO SECTION START----------------------------} */}
 
       <div className="banner">
@@ -41,25 +69,26 @@ function Home() {
 
       <div className="services__option">
         <div className="ser ser-1">
-          <p>
-            <i class="fa-regular fa-truck-fast"></i>
-          </p>
+          <FiTruck />
+          <h4>Free Delivery</h4>
+          <p className="desc">on orders above ₹999</p>
+        </div>
+
+        <div className="ser ser-1">
+          <BiTimer />
+
           <h4>Free Delivery</h4>
           <p className="desc">on orders above ₹999</p>
         </div>
 
         <div className="ser ser-2">
-          <p>
-            <i class="fa-regular fa-truck-fast"></i>
-          </p>
+          <MdPayments />
           <h4>Free Delivery</h4>
           <p className="desc">on orders above ₹999</p>
         </div>
 
         <div className="ser ser-3">
-          <p>
-            <i class="fa-regular fa-truck-fast"></i>
-          </p>
+          <MdOutlineSupportAgent />
           <h4>Free Delivery</h4>
           <p className="desc">on orders above ₹999</p>
         </div>
@@ -67,25 +96,77 @@ function Home() {
 
       {/* {---------------------SERVICE SECTION END----------------------------} */}
 
+      {/* {---------------------POPULAR-CATEGORY  SECTION START----------------------------} */}
+
+      <div className="categories">
+        <div className="categories__main container">
+          <h2>Shop Popular Categories</h2>
+
+          <div className="category__card-container">
+            <CategoryComp imgUrl={dummyIMg} catName="Bread Buns" />
+            <CategoryComp imgUrl={dummyIMg} catName="Bread Buns" />
+            <CategoryComp imgUrl={dummyIMg} catName="Bread Buns" />
+            <CategoryComp imgUrl={dummyIMg} catName="Bread Buns" />
+            <CategoryComp imgUrl={dummyIMg} catName="Bread Buns" />
+            <CategoryComp imgUrl={dummyIMg} catName="Bread Buns" />
+          </div>
+
+          <div className="category__popular-img">
+            <PopularItem imgUrl={CatImg} />
+            <PopularItem imgUrl={CatImg} />
+            <PopularItem imgUrl={CatImg} />
+            <PopularItem imgUrl={CatImg} />
+          </div>
+        </div>
+      </div>
+
       {/* {---------------------CARD SECTION START----------------------------} */}
       <article className="products">
         <div className="container products__container">
           <h3 className="popular__product">
             Popular From The Menu <span>20% OFF</span>{" "}
           </h3>
-          <div className="products__cards">
+          <div className="products__cards" ref={HorizontalScroll1}>
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
             <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
             <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
             <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
           </div>
+          <div className="scroll__buttons">
+            <AiFillCaretRight
+              className="right__btn"
+              onClick={handleTransformLeft1}
+            />
+            <AiFillCaretLeft
+              className="left__btn"
+              onClick={handleTransformRight1}
+            />
+          </div>
 
           <h3 className="feature__product">
-            Feature From The Menu <span>20% OFF</span>{" "}
+            Feature From The Menu <span>20% OFF</span>
           </h3>
-          <div className="products__cards">
+          <div className="products__cards" ref={HorizontalScroll2}>
             <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
             <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
             <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+          </div>
+          <div className="scroll__buttons-2">
+            <AiFillCaretRight
+              className="right__btn"
+              onClick={handleTransformLeft2}
+            />
+            <AiFillCaretLeft
+              className="left__btn"
+              onClick={handleTransformRight2}
+            />
           </div>
         </div>
       </article>
@@ -191,7 +272,7 @@ function Home() {
       </div>
 
       {/* {---------------------TESTIMONIALS SECTION END----------------------------} */}
-    </Fragment>
+    </div>
   );
 }
 

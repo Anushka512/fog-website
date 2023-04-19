@@ -32,41 +32,61 @@
 
 //----------------------------SERVICES-----------------
 .services__option {
-  position: relative;
   background-color: white;
-  margin: 0 auto;
-  width: 650px;
   border-radius: 8px;
-  padding: 1vmax;
+  padding: 2.5vmax 0;
   color: #8bc54b;
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
   color: blac;
-  bottom: 30px;
-  border: 1px solid #000000;
-
+  &:last-child {
+    border-right: none;
+  }
   .ser {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
+    justify-content: center;
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
     align-items: center;
+    width: 280px;
+
+    svg {
+      font-size: 2.3rem;
+      margin-bottom: 3px;
+    }
 
     .desc {
       font-size: 12px;
     }
   }
+
+  .ser.ser-3 {
+    border-right: none;
+  }
 }
 
 // ----------------------PRODUCTS---------------
 .products {
+  background-color: white;
   padding-top: 60px;
   padding-bottom: 60px;
+  position: relative;
   .products__container {
     .products__cards {
-      display: flex;
-      gap: 50px;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      gap: 5rem;
+      grid-auto-flow: column;
+      grid-auto-columns: 21%;
+
+      padding: 0 (2rem) (2rem);
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     .feature__product {
@@ -90,11 +110,62 @@
       font-weight: 300;
     }
   }
+
+  .right__btn {
+    position: absolute;
+    top: 28%;
+    right: 6%;
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.5vmax;
+    cursor: pointer;
+
+    font-size: 2rem;
+  }
+
+  .left__btn {
+    position: absolute;
+    top: 28%;
+    left: 6%;
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.5vmax;
+    cursor: pointer;
+
+    font-size: 2rem;
+  }
+
+  .scroll__buttons-2 {
+    .right__btn {
+      position: absolute;
+      top: 74%;
+      right: 6%;
+      background-color: white;
+      border-radius: 50%;
+      padding: 0.5vmax;
+      cursor: pointer;
+
+      font-size: 2rem;
+    }
+
+    .left__btn {
+      position: absolute;
+      top: 74%;
+      left: 6%;
+      background-color: white;
+      border-radius: 50%;
+      padding: 0.5vmax;
+      cursor: pointer;
+
+      font-size: 2rem;
+    }
+  }
 }
 
 //----------------------------MENU__IMG----------------->
 
 .div__row-img {
+  user-select: none;
   padding: 5vmax 0 0 0;
 }
 
@@ -220,26 +291,56 @@
   }
 }
 
-
 //----------------------------TestimonialS-START----------------->
 
-
-.Testimonials{
+.Testimonials {
   padding-top: 5vmax;
   padding-bottom: 5vmax;
   background-color: #fef4fb;
-  h2{
+  h2 {
     font-size: 50px;
     text-align: center;
     font-weight: 400;
     margin-bottom: 50px;
-    span{
+    span {
       font-weight: 600;
     }
   }
 
-  .testimonials__container{
+  .testimonials__container {
     flex-wrap: wrap;
     gap: 25px;
   }
+}
+
+.Home {
+  overflow-x: hidden;
+}
+
+/* {---------------------POPULAR-CATEGORY  SECTION START----------------------------} */
+
+.categories {
+  padding-top: 20px;
+  background-color: rgba(245, 47, 189, 0.19);
+
+  .category__card-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .category__popular-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    place-items: center;
+    padding-bottom: 50px;
+  }
+}
+
+.categories__main > h2 {
+  text-align: center;
 }
