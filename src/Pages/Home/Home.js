@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useRef } from "react";
 import Banner from "../../Assets/Images/Banner__IMG.png";
 import CardImg from "../../Assets/Images/3.jpg.png";
 import logoSec from "../../Assets/Images/logo__sec.png";
@@ -14,11 +14,32 @@ import CatImg from "../../Assets/Images/cat-img.png";
 import { FiTruck } from "react-icons/fi";
 import { MdOutlineSupportAgent, MdPayments } from "react-icons/md";
 import { BiTimer } from "react-icons/bi";
+import { AiFillCaretRight, AiFillCaretLeft } from "react-icons/ai";
 
 import "./Home.scss";
 
 function Home() {
+  const HorizontalScroll1 = useRef();
+  const HorizontalScroll2 = useRef();
   const [activeFilter, setActiveFilter] = useState("All");
+
+  const handleTransformLeft1 = (e) => {
+    console.log(e);
+    HorizontalScroll1.current.scrollLeft += 120;
+  };
+
+  const handleTransformRight1 = () => {
+    HorizontalScroll1.current.scrollLeft -= 120;
+  };
+
+  const handleTransformLeft2 = (e) => {
+    console.log(e);
+    HorizontalScroll2.current.scrollLeft += 120;
+  };
+
+  const handleTransformRight2 = () => {
+    HorizontalScroll2.current.scrollLeft -= 120;
+  };
 
   return (
     <div className="Home">
@@ -105,19 +126,47 @@ function Home() {
           <h3 className="popular__product">
             Popular From The Menu <span>20% OFF</span>{" "}
           </h3>
-          <div className="products__cards">
+          <div className="products__cards" ref={HorizontalScroll1}>
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
             <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
             <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
             <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
           </div>
+          <div className="scroll__buttons">
+            <AiFillCaretRight
+              className="right__btn"
+              onClick={handleTransformLeft1}
+            />
+            <AiFillCaretLeft
+              className="left__btn"
+              onClick={handleTransformRight1}
+            />
+          </div>
 
           <h3 className="feature__product">
-            Feature From The Menu <span>20% OFF</span>{" "}
+            Feature From The Menu <span>20% OFF</span>
           </h3>
-          <div className="products__cards">
+          <div className="products__cards" ref={HorizontalScroll2}>
             <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
             <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
             <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+          </div>
+          <div className="scroll__buttons-2">
+            <AiFillCaretRight
+              className="right__btn"
+              onClick={handleTransformLeft2}
+            />
+            <AiFillCaretLeft
+              className="left__btn"
+              onClick={handleTransformRight2}
+            />
           </div>
         </div>
       </article>

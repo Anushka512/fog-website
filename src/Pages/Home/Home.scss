@@ -51,7 +51,6 @@
     align-items: center;
     width: 280px;
 
-
     svg {
       font-size: 2.3rem;
       margin-bottom: 3px;
@@ -62,21 +61,32 @@
     }
   }
 
-  .ser.ser-3{
+  .ser.ser-3 {
     border-right: none;
   }
 }
 
 // ----------------------PRODUCTS---------------
 .products {
+  background-color: white;
   padding-top: 60px;
   padding-bottom: 60px;
+  position: relative;
   .products__container {
     .products__cards {
-      display: flex;
-      gap: 50px;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      gap: 5rem;
+      grid-auto-flow: column;
+      grid-auto-columns: 21%;
+
+      padding: 0 (2rem) (2rem);
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     .feature__product {
@@ -100,11 +110,62 @@
       font-weight: 300;
     }
   }
+
+  .right__btn {
+    position: absolute;
+    top: 28%;
+    right: 6%;
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.5vmax;
+    cursor: pointer;
+
+    font-size: 2rem;
+  }
+
+  .left__btn {
+    position: absolute;
+    top: 28%;
+    left: 6%;
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.5vmax;
+    cursor: pointer;
+
+    font-size: 2rem;
+  }
+
+  .scroll__buttons-2 {
+    .right__btn {
+      position: absolute;
+      top: 74%;
+      right: 6%;
+      background-color: white;
+      border-radius: 50%;
+      padding: 0.5vmax;
+      cursor: pointer;
+
+      font-size: 2rem;
+    }
+
+    .left__btn {
+      position: absolute;
+      top: 74%;
+      left: 6%;
+      background-color: white;
+      border-radius: 50%;
+      padding: 0.5vmax;
+      cursor: pointer;
+
+      font-size: 2rem;
+    }
+  }
 }
 
 //----------------------------MENU__IMG----------------->
 
 .div__row-img {
+  user-select: none;
   padding: 5vmax 0 0 0;
 }
 
