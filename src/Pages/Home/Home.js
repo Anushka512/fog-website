@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Banner from "../../Assets/Images/Banner__IMG.png";
 import CardImg from "../../Assets/Images/3.jpg.png";
 import logoSec from "../../Assets/Images/logo__sec.png";
@@ -111,6 +111,7 @@ function Home() {
             <CategoryComp imgUrl={dummyIMg} catName="Bread Buns" />
           </div>
 
+
           <div className="category__popular-img">
             <PopularItem imgUrl={CatImg} />
             <PopularItem imgUrl={CatImg} />
@@ -123,18 +124,18 @@ function Home() {
       {/* {---------------------CARD SECTION START----------------------------} */}
       <article className="products">
         <div className="container products__container">
-          <h3 className="popular__product">
-            Popular From The Menu <span>20% OFF</span>{" "}
-          </h3>
+          <div className="popular__product product__heading">
+            <h1>Recently Added Products</h1>
+          </div>
           <div className="products__cards" ref={HorizontalScroll1}>
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"350"} salePrice={"300"} category={"Breads"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"350"} salePrice={"300"} category={"Breads"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"350"} salePrice={"300"} category={"Breads"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"350"} salePrice={"300"} category={"Breads"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"350"} salePrice={"300"} category={"Breads"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"350"} salePrice={"300"} category={"Breads"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"350"} salePrice={"300"} category={"Breads"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"350"} salePrice={"300"} category={"Breads"} />
           </div>
           <div className="scroll__buttons">
             <AiFillCaretRight
@@ -147,16 +148,16 @@ function Home() {
             />
           </div>
 
-          <h3 className="feature__product">
-            Feature From The Menu <span>20% OFF</span>
-          </h3>
+          <div className="feature__product product__heading">
+            <h1>Popular Products</h1>
+          </div>
           <div className="products__cards" ref={HorizontalScroll2}>
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
-            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} salePrice={"20"} category={"Breads"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} salePrice={"20"} category={"Breads"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} salePrice={"20"} category={"Breads"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} salePrice={"20"} category={"Breads"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} salePrice={"20"} category={"Breads"} />
+            <Card imgUrl={CardImg} name={"Veg. Pasta Arabia"} price={"150"} salePrice={"20"} category={"Breads"} />
           </div>
           <div className="scroll__buttons-2">
             <AiFillCaretRight
@@ -190,9 +191,8 @@ function Home() {
                 (elem, id) => (
                   <div
                     onClick={() => setActiveFilter(elem)}
-                    className={`menu__item-filter-item flex__center p-text ${
-                      activeFilter === elem ? "item-active" : ""
-                    }`}
+                    className={`menu__item-filter-item flex__center p-text ${activeFilter === elem ? "item-active" : ""
+                      }`}
                     key={elem - id}
                   >
                     {elem}

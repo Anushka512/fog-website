@@ -1,12 +1,29 @@
 import React from 'react';
 import { useState } from "react";
-import "./Login.scss" ;
+import "./Login.scss";
 import login from "../../Assets/Images/login.png";
 import signup from "../../Assets/Images/signup.png";
+import { useDispatch } from "react-redux"
+import { getRegisterUser } from "../../Redux/Slices/user"
 
 
 function Login() {
+  const dispatch = useDispatch();
   const [isSignUpMode, setIsSignUpMode] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    dispatch(getRegisterUser({
+      name: userName,
+      password,
+      email,
+    }))
+
+  }
 
   const handleSignUpClick = () => {
     setIsSignUpMode(true);
@@ -17,7 +34,7 @@ function Login() {
   };
 
   return (
-    
+
     <div className={`container__login ${isSignUpMode ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
         <div className="signin-signup">
@@ -49,21 +66,21 @@ function Login() {
             <h2 className="title">Sign Up</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
-              <input type="text" name="Username" placeholder="Username" />
+              <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} name="Username" placeholder="Username" />
             </div>
             <div className="input-field">
               <i className="fas fa-envelope"></i>
-              <input type="text" placeholder="Email" />
+              <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
             </div>
             <div className="input-field">
               <i className="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" value={password} onChange={(e) => setPassword(e.target.val)} placeholder="Password" />
             </div>
             <div className="input-field">
               <i className="fas fa-lock"></i>
-              <input type="password" placeholder="Confirm Password" />
+              <input type="password" value={password} placeholder="Confirm Password" />
             </div>
-            <button type="submit" className="btn cart">
+            <button type="submit" onClick={handleSignup} className="btn cart">
               Sign Up
             </button>
 
@@ -113,8 +130,8 @@ function Login() {
           <img src={login} alt="" className="image" />
         </div>
       </div>
-      
+
     </div>
   );
-  }
+}
 export default Login;
