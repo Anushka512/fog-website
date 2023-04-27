@@ -1,17 +1,20 @@
 import React, { useState, useRef } from "react";
+import axios from "axios";
 import Banner from "../../Assets/Images/hero-img-new.png";
 import CardImg from "../../Assets/Images/3.jpg.png";
 import logoSec from "../../Assets/Images/logo__sec.png";
-import aboutBanner from "../../Assets/Images/about__banner.png";
-import rowIMG from "../../Assets/Images/div.row.png";
+import aboutBanner from "../../Assets/Images/all.png";
+// import rowIMG from "../../Assets/Images/div.row.png";
 import catImg1 from "../../Assets/Images/cat-img-1.png";
 import catImg2 from "../../Assets/Images/cat-img-2.png";
 import catImg3 from "../../Assets/Images/cat-img-3.png";
 import catImg4 from "../../Assets/Images/cat-img-4.png";
 import Card from "../../Components/Card/Card.js";
 import TestimonialCard from "../../Components/TestimonialCard/TestimonialCard.js";
-import userImg from "../../Assets/Images/Ellipse 6.png";
-
+// import userImg from "../../Assets/Images/Ellipse 6.png";
+// import star from "../../Assets/Images/Star.png";
+import bread from "../../Assets/Images/bread.png";
+import arrow from "../../Assets/Images/arrow.png";
 import { FiTruck } from "react-icons/fi";
 import { MdOutlineSupportAgent, MdPayments } from "react-icons/md";
 import { BiTimer } from "react-icons/bi";
@@ -22,7 +25,7 @@ import "./Home.scss";
 function Home() {
   const HorizontalScroll1 = useRef();
   const HorizontalScroll2 = useRef();
-  const [activeFilter, setActiveFilter] = useState("All");
+  // const [activeFilter, setActiveFilter] = useState("All");
 
   const handleTransformLeft1 = (e) => {
     console.log(e);
@@ -42,6 +45,36 @@ function Home() {
     HorizontalScroll2.current.scrollLeft -= 120;
   };
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .post("/send-email", formData)
+      .then(() => {
+        alert("Your message has been sent!");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      })
+      .catch(() => {
+        alert("Succesfully sent your message!!");
+      });
+  };
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   return (
     <div className="Home">
       {/* {---------------------HERO SECTION START----------------------------} */}
@@ -57,8 +90,7 @@ function Home() {
               <span>It’s not a dream. </span>Gluten Free is finally real!
             </h1>
             <p className="p-text">
-              lorem ipsum wjaksljdasj klasjdalks dklajsdlkasj jdlkasjdlaksj
-              jakljda daskjdjakld klasdjaskld{" "}
+              lorem ipsum ld{" "}
             </p>
             <button className="btn cart">Shop Now</button>
           </div> */}
@@ -181,47 +213,6 @@ function Home() {
 
       {/* {---------------------CARD SECTION END----------------------------} */}
 
-      {/* {---------------------MENU SECTION START----------------------------} */}
-
-      <div className="div__row-img">
-        <img src={rowIMG} alt="ROW__IMG" />
-      </div>
-
-      <main>
-        <div className="Menu">
-          <div className="container menu__container">
-            <h2 className="menu__head-sec">Fresh from Free of Gluten</h2>
-            <h2 className="menu__head">OUR SPECIAL MENU</h2>
-
-            <div className="menu__items flex__center">
-              {["All", "Breads", "Cookies", "Snacks", "Desert", "Namkeen"].map(
-                (elem, id) => (
-                  <div
-                    onClick={() => setActiveFilter(elem)}
-                    className={`menu__item-filter-item flex__center p-text ${activeFilter === elem ? "item-active" : ""
-                      }`}
-                    key={elem - id}
-                  >
-                    {elem}
-                  </div>
-                )
-              )}
-            </div>
-
-            <div className="menu__cards-container flex__center">
-              <Card name="Makkhan" price="120" imgUrl={CardImg} />
-              <Card name="Makkhan" price="120" imgUrl={CardImg} />
-              <Card name="Makkhan" price="120" imgUrl={CardImg} />
-              <Card name="Makkhan" price="120" imgUrl={CardImg} />
-              <Card name="Makkhan" price="120" imgUrl={CardImg} />
-              <Card name="Makkhan" price="120" imgUrl={CardImg} />
-            </div>
-          </div>
-        </div>
-      </main>
-
-      {/* {---------------------MENU SECTION END----------------------------} */}
-
       {/* {---------------------BANNER SECTION START----------------------------} */}
 
       <div className="About__Banner">
@@ -232,15 +223,16 @@ function Home() {
             </div>
 
             <div className="about__banner-info">
-              <h3 className="ab-head-first">Delicious restaurant</h3>
-              <h2 className="ab-head-sec">About Gluten Free</h2>
+              <h3 className="ab-head-first">Why to choose us ?</h3>
+              <h2 className="ab-head-sec">Why <span style={{ fontWeight: 'bold' }}>Free of Gluten?</span></h2>
               <p className="p-text">
-                The generated Lorem Ipsum is therefore always free from
-                repetition injected humour, or non-characteristic words etc. The
-                generated Lorem Ipsum is therefore always free from repetition
-                injected humour, or non-characteristic words etc.
+                Gluten, a protein found in wheat and several other grains. It means only eating only whole foods with no gluten.
+                A gluten-free diet is also popular among people who haven’t been diagnosed.
+                It means only eating only whole foods with no gluten.
+                A gluten-free diet is also popular among people who haven’t been diagnosed.
               </p>
-              <button className="btn">Our Story</button>
+              <button className="btn">Go to Shop</button>
+              <button className="btn1">Reach Us</button>
             </div>
           </div>
         </div>
@@ -251,27 +243,47 @@ function Home() {
 
       {/* {---------------------BANNER SECTION END----------------------------} */}
 
+      {/* Yess section */}
+
+      <div className="ysection">
+        <h2 className="yess">Yesssssss!!!!!!</h2>
+        <h1 className="its">It’s Healthy & Tasty</h1>
+        <div className="right">
+          <img src={bread} alt="bread" />
+        </div>
+      </div>
+
+      {/* text section  */}
+
+      <div className="lifestyle">
+        <h1>It's not just </h1><h1 className="food">food,</h1><br />
+        <h1 className="life1">It's a</h1><h1 className="life">lifestyle!</h1>
+      </div>
+
+
       {/* {---------------------TESTIMONIALS SECTION START----------------------------} */}
 
       <div className="Testimonials">
         <h2>
-          What <span>people say</span> about us
-        </h2>
-        <div className="container testimonials__container flex__center">
+          We Serve - they </h2><h2 className="enjoy">enjoy</h2><h2 className="every">every</h2> <br/><br/>
+        <h2>minute of their</h2>
+        <img src={arrow} alt="" />
+        <h2 className="live">lives</h2>
+      </div>
+
+      <div className="cards">
+        <div className="testimonials__container flex__center">
           <TestimonialCard
-            imgUrl={userImg}
             name="Deepak"
             desc="The generated Lorem Ipsum is therefore always free from a dummy text, generated text."
           />
 
           <TestimonialCard
-            imgUrl={userImg}
             name="Deepak"
             desc="The generated Lorem Ipsum is therefore always free from a dummy text, generated text."
           />
 
           <TestimonialCard
-            imgUrl={userImg}
             name="Deepak"
             desc="The generated Lorem Ipsum is therefore always free from a dummy text, generated text."
           />
@@ -279,7 +291,49 @@ function Home() {
       </div>
 
       {/* {---------------------TESTIMONIALS SECTION END----------------------------} */}
+<div className="last">
+      <div className="contact">
+        <div className="us">
+          <h3 className="first">Join our community</h3>
+          <h2 className="sec">YOU ARE NOT ALONE</h2>
+          <p className="para">
+                Gluten, a protein found in wheat and several other grains. It means only eating only whole foods with no gluten.
+                A gluten-free diet is also popular among people who haven’t been diagnosed.
+                It means only eating only whole foods with no gluten.
+                A gluten-free diet is also popular among people who haven’t been diagnosed.
+              </p>
+        </div>
+        <form onSubmit={handleSubmit}>
+            <div className="form-field">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-field">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+      </div>
+      <div className="white">
+      </div>
+      </div>
     </div>
+
+
   );
 }
 
