@@ -1,9 +1,11 @@
-.socials__nav {
+.top__nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 10rem;
-  background-color: black;
+  height: 52px;
+  padding: 0px 5%;
+  background-color: var(--fade-blue);
+
   .social__icon {
     svg {
       color: white;
@@ -12,19 +14,22 @@
       cursor: pointer;
     }
   }
- p{
-    margin: 0;
- }
+
+  p {
+    color: #ffffff;
+    font-size: 19px;
+    
+  }
 }
 
 nav {
-  height: 5rem;
+  // height: 5rem;
   background-color: #ffffff;
-  padding-top: 5px;
+  padding: 10px 0px;
   position: sticky;
   z-index: 10;
   top: 0;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+  // box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
 
   .nav__container {
     display: flex;
@@ -32,7 +37,7 @@ nav {
     align-items: center;
 
     .logo {
-      width: 90px;
+      width: 70px;
     }
 
     ul {
@@ -47,6 +52,7 @@ nav {
         a {
           text-decoration: none;
           color: black;
+          font-size: 19px;
         }
       }
     }
@@ -54,10 +60,11 @@ nav {
     .right {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 0px 15px;
+
       svg {
-        color: #8bc54b;
-        font-size: 35px;
+        color: var(--secondary-black);
+        font-size: 25px;
         cursor: pointer;
       }
     }

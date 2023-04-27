@@ -1,9 +1,15 @@
+// Font popins 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap");
+
+// font rubik  and cookie
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Rubik:wght@300;400;500;600;700&display=swap');
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  // font-family: "Poppins", sans-serif;
+  font-family: 'Rubik', sans-serif;
+  // font-family: 'Cookie', cursive;
 }
 
 body {
@@ -15,13 +21,18 @@ html{
 }
 
 :root {
-  --primary-green: green;
+  --primary-green: #54B22C;
   --primary-white: #ffffff;
+  --secondary-white: #FDFBFA;
   --primary-black: #000000;
+  --secondary-black: #202020;
   --primary-pink: #ef8bd3;
   --primary-grey: #9c9c9c;
+  --fade-black: #666666;
+  --fade-yl-bg:#FFFDE8;
+  --fade-blue: #38AAB5;
 
-  --container-width-lg: 80%;
+  --container-width-lg: 90%;
   --container-width-md: 90%;
   --container-width-sm: 94%;
   --transition: all 400ms ease;

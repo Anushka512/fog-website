@@ -7,15 +7,15 @@ import "./Navbar.scss";
 export default function Navbar({setToggleCart}) {
   return (
     <div className="wrapper__nav">
-      <div className="socials__nav">
+      <div className="top__nav">
         <div className="social__icon">
           <BsFacebook />
           <BsInstagram />
           <BsTwitter />
         </div>
 
-        <p className="p-text">
-          Sale: 20% off on orders above ₹999. Valid until 22nd April only.
+        <p>
+          Sale: 20% off on orders above ₹999
         </p>
       </div>
       <nav className="navbar-items">
@@ -24,7 +24,7 @@ export default function Navbar({setToggleCart}) {
             <img src={Logo} alt="Logo" />
           </div>
           <ul>
-            {["Home", "About Us", "Blog", "Contact Us"].map((item, id) => (
+            {["Home", "Gluten free Shop", "About Us", "Reach Us", "Blogs"].map((item, id) => (
               <li key={item - id}>
                 <a href={`#${item}`}>{item}</a>
               </li>
@@ -33,8 +33,9 @@ export default function Navbar({setToggleCart}) {
           <div className="right">
             <AiOutlineShoppingCart onClick={setToggleCart} />
             <AiOutlineHeart />
+            <AiOutlineHeart />
             <div className="auth">
-              <button className="btn cart">Login/Signup</button>
+              {/* <button className="btn cart">Login/Signup</button> */}
             </div>
           </div>
         </div>

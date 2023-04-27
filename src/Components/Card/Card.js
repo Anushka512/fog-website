@@ -1,37 +1,39 @@
 import React from "react";
-import Span from "../../Assets/Images/span.veg.png";
 import "./Card.scss";
 // import { AiOutlineHeart, AiFillCheckCircle } from "react-icons/ai";
 
-function Card({ imgUrl, name, price, salePrice , category }) {
+function Card({ imgUrl, name, price, salePrice, category }) {
   return (
     <div className="Card">
-      <div className="top__bar">
-        <p>20% OFF</p>
-        <img src={Span} alt="Span" />
+      <div className="card__top">
+        <p>
+          <span>20%</span>
+          <span>OFF</span>
+        </p>
+        <div className="card__img flex__center">
+          <img src={imgUrl} alt="product" />
+        </div>
       </div>
-      <div className="card__img flex__center">  
-        <img src={imgUrl} alt="product" />
-      </div>
-      <div className="bottom__bar">
+      <div className="card__bottom">
         <div className="card__info">
-          <span>{category}</span>
           <h3>{name}</h3>
+          <span>{category}</span>
         </div>
 
-        <div className="card__desc">
+        <div className="card__footer">
           <span className="card__price">
-          <p className="price">
-            ₹{price}
-          </p>
-          <p className="sale__price">
-            ₹{salePrice}
-          </p>
+            <p className="price">
+              ₹{price}
+            </p>
+            <p className="sale__price">
+              ₹{salePrice}
+            </p>
           </span>
 
-          <button className="btn">Add To Cart</button>
+          <button className="btn">Add to cart</button>
         </div>
       </div>
+
     </div>
   );
 }
